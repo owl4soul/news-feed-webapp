@@ -15,10 +15,10 @@
         <servlet-name>spring</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-    <!--Context config-->
+    <!--Context config -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>src/main/webapp/WEB-INF/spring-servlet.xml</param-value>
+        <param-value>spring-servlet.xml</param-value>
     </context-param>
     <!--Context loader-->
     <listener>
