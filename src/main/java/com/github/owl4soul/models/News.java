@@ -28,16 +28,14 @@ public class News {
     private LocalDate date;
 
     @Column(name = "category_news")
-    private Category category;
+    private String category;
 
-    public News() {
-    }
 
     public News(String name, String content, LocalDate date, Category category) {
         this.name = name;
         this.content = content;
         this.date = date;
-        this.category = category;
+        this.category = category.name();
     }
 
     public String getName() {
@@ -64,11 +62,11 @@ public class News {
         this.date = date;
     }
 
-    public Category getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 }

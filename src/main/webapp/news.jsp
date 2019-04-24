@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: owl
@@ -8,21 +9,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>NEWS</title>
 </head>
 <body>
-Create news
 
-<tr bgcolor="#c8d8f8">
-    <td valign=top>
-        Name*
-
-        <input type="text" name="name" value="" size=15 maxlength=20></td>
-    <td  valign=top>
-        Content*
-
-        <input type="text" name="content" value="" size=15 maxlength=50></td>
-</tr>
-<input type="submit" value="Create new news">
 </body>
 </html>
