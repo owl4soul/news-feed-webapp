@@ -1,4 +1,17 @@
 package com.github.owl4soul.models;
 
-public class Category {
+public enum Category {
+    IT,
+    SCIENCE,
+    SPORT,
+    POLITICS,
+    OTHER;
+
+    Category() {
+    }
+
+    public String getName() {
+        return this.name();
+    }
+
 }
