@@ -8,6 +8,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "news")
+//@NamedQueries({ @NamedQuery(name = "findAllByCategory", query = "from News news where news.category= :name") })
 public class News {
 
     @Id
@@ -26,6 +27,7 @@ public class News {
 
     @Column(name = "date_news")
     private LocalDate date;
+
 
     @Column(name = "category_news")
     private String category;

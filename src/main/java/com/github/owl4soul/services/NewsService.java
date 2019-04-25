@@ -37,5 +37,9 @@ public class NewsService {
         return newsDAO.findNewsById(id);
     }
 
+    public List<News> findAllByCategory(String category) {
+        return newsDAO.findAllByCategory(category);
+    }
+
 
 }

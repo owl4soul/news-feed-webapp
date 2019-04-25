@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         NewsService service = new NewsService();
 
-        News news = new News("Name from main", "Content from main", LocalDate.now(), Category.OTHER);
+        News news = new News("Name from main", "Content from main", LocalDate.now(), Category.IT);
         service.saveNews(news);
 
 
@@ -20,11 +20,11 @@ public class Main {
             System.out.println(n);
         }
 
-        News toDel = service.findNewsById(1);
-        service.deleteNews(toDel);
+//        News toDel = service.findNewsById(1);
+//        service.deleteNews(toDel);
 
-        List<News> newsList2 = service.findAllNews();
-        for (News n:newsList2) {
+        List<News> newsList2 = service.findAllByCategory(Category.IT.name());
+        for (Object n:newsList2) {
             System.out.println(n);
         }
 
