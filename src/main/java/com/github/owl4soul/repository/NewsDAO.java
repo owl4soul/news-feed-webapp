@@ -4,7 +4,6 @@ import com.github.owl4soul.models.News;
 import com.github.owl4soul.utils.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
 import java.util.List;
 
 //Data access object

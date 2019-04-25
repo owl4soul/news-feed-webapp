@@ -3,8 +3,8 @@ package com.github.owl4soul.models;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "news")
@@ -26,7 +26,7 @@ public class News {
     private String content;
 
     @Column(name = "date_news")
-    private LocalDate date;
+    private LocalDateTime date;
 
 
     @Column(name = "category_news")
@@ -36,7 +36,7 @@ public class News {
 
     }
 
-    public News(String name, String content, LocalDate date, Category category) {
+    public News(String name, String content, LocalDateTime date, Category category) {
         this.name = name;
         this.content = content;
         this.date = date;
@@ -59,11 +59,11 @@ public class News {
         this.content = content;
     }
 
-    public LocalDate getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 

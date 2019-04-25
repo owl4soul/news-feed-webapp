@@ -10,8 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 //Spring controller
 @Controller
@@ -25,8 +24,8 @@ public class MainController {
 
     @RequestMapping(value = "/save", method = RequestMethod.GET)
     public String saveNews(Model model) {
-        model.addAttribute("news", new News("This is name", "This is content", LocalDate.now(), Category.IT));
-        service.saveNews(new News("This is name", "This is content", LocalDate.now(), Category.IT));
+        model.addAttribute("news", new News("This is name", "This is content", LocalDateTime.now(), Category.IT));
+        service.saveNews(new News("This is name", "This is content", LocalDateTime.now(), Category.IT));
         return "news";
     }
 

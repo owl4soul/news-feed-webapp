@@ -8,11 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.time.LocalDate;
-import java.util.Map;
+import java.time.LocalDateTime;
+
 
 @Controller
 public class CreateNewsController {
@@ -30,7 +29,7 @@ public class CreateNewsController {
         String name = newsForm.getName();
         String content = newsForm.getContent();
         System.out.println("n^ " + name + " and " + content); //todo: remove it later
-        News news = new News(name, content, LocalDate.now(), Category.SCIENCE);
+        News news = new News(name, content, LocalDateTime.now(), Category.SCIENCE);
         model.addAttribute("news", news);
         service.saveNews(news);
 
