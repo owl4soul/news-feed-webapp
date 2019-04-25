@@ -30,6 +30,9 @@ public class News {
     @Column(name = "category_news")
     private String category;
 
+    protected News() {
+
+    }
 
     public News(String name, String content, LocalDate date, Category category) {
         this.name = name;
@@ -68,5 +71,21 @@ public class News {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "{"
+                + "ID: " + this.id + " | "
+                + "NAME: " + this.name + " | "
+                + "CONTENT: " + this.content + " | "
+                + "DATE: " + this.date + " | "
+                + "CATEGORY: " + this.category
+                + "}";
+
     }
 }
