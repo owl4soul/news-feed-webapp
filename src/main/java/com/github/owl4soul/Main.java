@@ -3,8 +3,9 @@ package com.github.owl4soul;
 import com.github.owl4soul.models.Category;
 import com.github.owl4soul.models.News;
 import com.github.owl4soul.services.NewsService;
+import com.github.owl4soul.utils.IterateAndSout;
+
 import java.time.LocalDateTime;
-import java.util.Iterator;
 import java.util.List;
 
 public class Main {
@@ -12,7 +13,7 @@ public class Main {
         NewsService service = new NewsService();
 
         //Creating new news and save it to database
-        News news = new News("Name from main", "Content from main", LocalDateTime.now(), Category.IT);
+        News news = new News("NewName", "Updated content", LocalDateTime.now(), Category.SCIENCE);
         service.saveNews(news);
 
 
@@ -27,19 +28,25 @@ public class Main {
 //        service.deleteNews(toDel);
 
         //System output all news corresponding to a given category
-        List<News> newsList2 = service.findAllByCategory(Category.IT.name());
-        Iterator it = newsList2.iterator();
-        int counter = 0;
-        while (it.hasNext()) {
-            counter++;
-            Object[] newss = (Object[]) it.next();
-            Integer id = Integer.parseInt(String.valueOf(newss[0]));
-            String name = String.valueOf(newss[1]);
-            String content = String.valueOf(newss[2]);
-            String date = String.valueOf(newss[3]);
-            String category = String.valueOf(newss[4]);
-            System.out.println("# " + counter + ". >> " + id + " | " + name + " | " + content + " | " + date + " | " + category);
-        }
+        System.out.println("________________________________________________________");
+        System.out.println("System output all news corresponding to a given category");
+        List<News> selectedByCategory = service.findAllByCategory(Category.IT.name());
+        IterateAndSout.iterateAndSoutNews(selectedByCategory);
+
+
+        //System output all news named as argument
+        System.out.println("________________________________________________________");
+        System.out.println("System output all news named as argument");
+        List<News> selectedByName = service.findAllByName("NewName");
+        IterateAndSout.iterateAndSoutNews(selectedByName);
+
+        //System output all news having a certain content
+        System.out.println("________________________________________________________");
+        System.out.println("System output all news having a certain content");
+        List<News> selectedByContent = service.findAllByContent("Updated content");
+        IterateAndSout.iterateAndSoutNews(selectedByContent);
+
+
 
     }
 }

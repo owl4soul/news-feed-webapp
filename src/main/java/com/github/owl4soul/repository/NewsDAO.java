@@ -48,4 +48,14 @@ public class NewsDAO {
         return listNews;
     }
 
+    public List<News> findAllByName(String name) {
+        List<News> listNews = (List<News>)HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery("select * from userdatabase.public.news where public.news.name_news='NewName';").list();
+        return listNews;
+    }
+
+    public List<News> findAllByContent(String content) {
+        List<News> listNews = (List<News>)HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery("select * from userdatabase.public.news where public.news.content_news='Updated content';").list();
+        return listNews;
+    }
+
 }
