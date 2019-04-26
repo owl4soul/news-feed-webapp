@@ -33,7 +33,16 @@ Here is the list of all the news.
     <tr>
         <td>${news.category}</td>
     </tr>
+    <tr>
+        <td>
+        <form action="/edit" method="get">
+            <input type="hidden" name="editId" value="${news.id}">
+            <%--<input type="hidden" name="editContent" value="${news.content}">--%>
 
+
+            <button type="submit" name="editButton" value="editButton">Edit news</button>
+        </form>
+        </td>
     </tr>
 </c:forEach>
 </table>

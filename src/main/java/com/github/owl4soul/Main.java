@@ -18,6 +18,8 @@ public class Main {
 
         service.updateNews(news);
 
+        service.mergeNews(news, new News("Changed", "This news was changed", LocalDateTime.now(), Category.POLITICS));
+
 
         //System output all news stored in the database at the moment
         List<News> newsList = service.findAllNews();

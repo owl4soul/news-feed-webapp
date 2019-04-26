@@ -5,6 +5,8 @@ import com.github.owl4soul.models.News;
 import com.github.owl4soul.utils.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
+import java.time.LocalDateTime;
 import java.util.List;
 
 //Data access object
@@ -25,6 +27,23 @@ public class NewsDAO {
         news.setName("ABRACADABRA");
         news.setCategory(Category.OTHER);
         session.update(news);
+        tx1.commit();
+        session.close();
+    }
+
+    public void merge(News news, News changed) {
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Transaction tx1 = session.beginTransaction();
+        String nameChanged = changed.getName();
+        String contentChanged = changed.getContent();
+        LocalDateTime dateChanged = changed.getDate();
+        String categoryChanged = changed.getCategory();
+
+        news.setName(nameChanged);
+        news.setContent(contentChanged);
+        news.setDate(dateChanged);
+        news.setCategory(categoryChanged);
+        session.merge(news);
         tx1.commit();
         session.close();
     }

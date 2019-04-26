@@ -29,6 +29,10 @@ public class NewsService {
         newsDAO.update(news);
     }
 
+    public void mergeNews(News news, News changed) {
+        newsDAO.merge(news, changed);
+    }
+
     public List<News> findAllNews() {
         return newsDAO.findAll();
     }
