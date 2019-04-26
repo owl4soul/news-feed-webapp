@@ -1,5 +1,7 @@
 package com.github.owl4soul.models;
 
+import sun.security.x509.CertAttrSet;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -81,6 +83,12 @@ public class News {
     public void setCategory(String category) {
         this.category = category;
     }
+
+    public void setCategory(Category category) {
+        this.category = category.name();
+    }
+
+
 
     public int getId() {
         return id;

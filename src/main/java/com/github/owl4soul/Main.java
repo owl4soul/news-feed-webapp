@@ -13,8 +13,10 @@ public class Main {
         NewsService service = new NewsService();
 
         //Creating new news and save it to database
-        News news = new News("NewName", "Updated content", LocalDateTime.now(), Category.SCIENCE);
+        News news = new News("TEST", "Test content", LocalDateTime.now(), Category.SCIENCE);
         service.saveNews(news);
+
+        service.updateNews(news);
 
 
         //System output all news stored in the database at the moment
@@ -27,24 +29,24 @@ public class Main {
 //        News toDel = service.findNewsById(1);
 //        service.deleteNews(toDel);
 
-        //System output all news corresponding to a given category
-        System.out.println("________________________________________________________");
-        System.out.println("System output all news corresponding to a given category");
-        List<News> selectedByCategory = service.findAllByCategory(Category.SCIENCE.name());
-        IterateAndSout.iterateAndSoutNews(selectedByCategory);
-
-
-        //System output all news named as argument
-        System.out.println("________________________________________________________");
-        System.out.println("System output all news named as argument");
-        List<News> selectedByName = service.findAllByName("Name from main");
-        IterateAndSout.iterateAndSoutNews(selectedByName);
-
-        //System output all news having a certain content
-        System.out.println("________________________________________________________");
-        System.out.println("System output all news having a certain content");
-        List<News> selectedByContent = service.findAllByContent("Content from main");
-        IterateAndSout.iterateAndSoutNews(selectedByContent);
+//        //System output all news corresponding to a given category
+//        System.out.println("________________________________________________________");
+//        System.out.println("System output all news corresponding to a given category");
+//        List<News> selectedByCategory = service.findAllByCategory(Category.SCIENCE.name());
+//        IterateAndSout.iterateAndSoutNews(selectedByCategory);
+//
+//
+//        //System output all news named as argument
+//        System.out.println("________________________________________________________");
+//        System.out.println("System output all news named as argument");
+//        List<News> selectedByName = service.findAllByName("Name from main");
+//        IterateAndSout.iterateAndSoutNews(selectedByName);
+//
+//        //System output all news having a certain content
+//        System.out.println("________________________________________________________");
+//        System.out.println("System output all news having a certain content");
+//        List<News> selectedByContent = service.findAllByContent("Content from main");
+//        IterateAndSout.iterateAndSoutNews(selectedByContent);
 
 
 
