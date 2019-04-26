@@ -1,6 +1,5 @@
 package com.github.owl4soul.controllers;
 
-import com.github.owl4soul.models.Category;
 import com.github.owl4soul.models.News;
 import com.github.owl4soul.models.NewsForm;
 import com.github.owl4soul.services.NewsService;
@@ -34,7 +33,7 @@ public class CreateNewsController {
         model.addAttribute("news", news);
         service.saveNews(news);
 
-        return "news";
+        return "list";
     }
 
 }

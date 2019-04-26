@@ -26,7 +26,7 @@ public class MainController {
     public String saveNews(Model model) {
         model.addAttribute("news", new News("This is name", "This is content", LocalDateTime.now(), Category.IT));
         service.saveNews(new News("This is name", "This is content", LocalDateTime.now(), Category.IT));
-        return "news";
+        return "list";
     }
 
 }
