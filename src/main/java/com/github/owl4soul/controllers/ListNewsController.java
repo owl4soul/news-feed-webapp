@@ -13,7 +13,7 @@ public class ListNewsController {
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public ModelAndView showListNews() {
         ModelAndView result = new ModelAndView("/list");
-        result.addObject("listNews", new NewsService().findAllNews());
+        result.addObject("listNews", service.findAllNews());
         return result;
     }
 }
