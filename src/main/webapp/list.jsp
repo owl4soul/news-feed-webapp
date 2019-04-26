@@ -37,12 +37,14 @@ Here is the list of all the news.
         <td>
         <form action="/edit" method="get">
             <input type="hidden" name="editId" value="${news.id}">
-            <%--<input type="hidden" name="editContent" value="${news.content}">--%>
-
-
-            <button type="submit" name="editButton" value="editButton">Edit news</button>
+            <button type="submit" name="button" value="editButton">Edit news</button>
         </form>
         </td>
+
+        <td><form action="/delete" method="get">
+            <input type="hidden" name="editId" value="${news.id}">
+            <button type="submit" name="button" value="deleteButton">Delete news</button>
+        </form></td>
     </tr>
 </c:forEach>
 </table>

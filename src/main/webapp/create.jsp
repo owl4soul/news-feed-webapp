@@ -27,7 +27,7 @@ Create news
 
 
             *Category
-            <select name="category" size=10>
+            <select name="category" size=5>
                 <option>${Category.IT.name()}</option>
                 <option>${Category.SCIENCE.name()}</option>
                 <option>${Category.SPORT.name()}</option>

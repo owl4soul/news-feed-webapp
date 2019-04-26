@@ -35,7 +35,7 @@ public class EditNewsController {
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
-    public String editNews(@RequestParam(required = false, name = "editId", value = "editId") String editId, NewsForm newsForm, Model model) {
+    public ModelAndView editNews(@RequestParam(required = false, name = "editId", value = "editId") String editId, NewsForm newsForm, Model model) {
         int id = Integer.parseInt(editId);
         News originalNews = service.findNewsById(id);
         String name = newsForm.getName();
@@ -54,9 +54,11 @@ public class EditNewsController {
         }
 
         News news = new News(name, content, date, category);
-        model.addAttribute("news", news);
+
         service.mergeNews(originalNews, news);
 
-        return "list";
+        ModelAndView modelAndView = new ModelAndView("success");
+
+        return modelAndView;
     }
 }
