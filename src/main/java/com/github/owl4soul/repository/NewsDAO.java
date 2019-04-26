@@ -38,23 +38,26 @@ public class NewsDAO {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(News.class, id);
     }
 
-    public List<News> findAllByCategory(String category) {
-        List<News> listNews = (List<News>)HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery("select * from userdatabase.public.news where public.news.category_news='IT';").list();
-        return listNews;
-    }
-
     public List<News> findAll() {
         List<News> listNews = (List<News>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From News").list();
         return listNews;
     }
 
+    public List<News> findAllByCategory(String category) {
+        String hql = "select * from userdatabase.public.news where public.news.category_news='" + category + "'";
+        List<News> listNews = (List<News>)HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery(hql).list();
+        return listNews;
+    }
+
     public List<News> findAllByName(String name) {
-        List<News> listNews = (List<News>)HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery("select * from userdatabase.public.news where public.news.name_news='NewName';").list();
+        String hql = "select * from userdatabase.public.news where public.news.name_news='" + name + "'";
+        List<News> listNews = (List<News>)HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery(hql).list();
         return listNews;
     }
 
     public List<News> findAllByContent(String content) {
-        List<News> listNews = (List<News>)HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery("select * from userdatabase.public.news where public.news.content_news='Updated content';").list();
+        String hql = "select * from userdatabase.public.news where public.news.content_news='" + content + "'";
+        List<News> listNews = (List<News>)HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery(hql).list();
         return listNews;
     }
 

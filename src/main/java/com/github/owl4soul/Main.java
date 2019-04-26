@@ -30,20 +30,20 @@ public class Main {
         //System output all news corresponding to a given category
         System.out.println("________________________________________________________");
         System.out.println("System output all news corresponding to a given category");
-        List<News> selectedByCategory = service.findAllByCategory(Category.IT.name());
+        List<News> selectedByCategory = service.findAllByCategory(Category.SCIENCE.name());
         IterateAndSout.iterateAndSoutNews(selectedByCategory);
 
 
         //System output all news named as argument
         System.out.println("________________________________________________________");
         System.out.println("System output all news named as argument");
-        List<News> selectedByName = service.findAllByName("NewName");
+        List<News> selectedByName = service.findAllByName("Name from main");
         IterateAndSout.iterateAndSoutNews(selectedByName);
 
         //System output all news having a certain content
         System.out.println("________________________________________________________");
         System.out.println("System output all news having a certain content");
-        List<News> selectedByContent = service.findAllByContent("Updated content");
+        List<News> selectedByContent = service.findAllByContent("Content from main");
         IterateAndSout.iterateAndSoutNews(selectedByContent);
 
 
