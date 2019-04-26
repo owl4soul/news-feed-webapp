@@ -1,0 +1,11 @@
+create table news
+(
+  id_news serial not null
+    constraint news_pk
+    primary key,
+  name_news varchar(255) not null,
+  content_news VARCHAR not null,
+  date_news VARCHAR not null,
+  category_news varchar not null
+);
+
