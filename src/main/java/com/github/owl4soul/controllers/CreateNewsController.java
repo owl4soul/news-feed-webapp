@@ -30,7 +30,7 @@ public class CreateNewsController {
         String content = newsForm.getContent();
         String category = newsForm.getCategory();
         System.out.println("n^ " + name + " and " + content + " and " + category); //todo: remove it later
-        News news = new News(name, content, LocalDateTime.now(), Category.IT);
+        News news = new News(name, content, LocalDateTime.now(), category);
         model.addAttribute("news", news);
         service.saveNews(news);
 

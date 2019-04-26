@@ -43,6 +43,13 @@ public class News {
         this.category = category.name();
     }
 
+    public News(String name, String content, LocalDateTime date, String category) {
+        this.name = name;
+        this.content = content;
+        this.date = date;
+        this.category = category;
+    }
+
     public String getName() {
         return name;
     }
