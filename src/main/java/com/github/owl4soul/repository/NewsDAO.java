@@ -24,8 +24,6 @@ public class NewsDAO {
     public void update(News news) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        news.setName("ABRACADABRA");
-        news.setCategory(Category.OTHER);
         session.update(news);
         tx1.commit();
         session.close();

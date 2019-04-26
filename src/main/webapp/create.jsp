@@ -33,7 +33,6 @@ Create news
                 <option>${Category.SPORT.name()}</option>
                 <option>${Category.POLITICS.name()}</option>
                 <option>${Category.OTHER.name()}</option>
-
             </select>
 
     </tr>

@@ -5,7 +5,6 @@ import com.github.owl4soul.models.NewsForm;
 import com.github.owl4soul.services.NewsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -36,13 +35,27 @@ public class EditNewsController {
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
-    public String editNews(NewsForm newsForm, Model model) {
+    public String editNews(@RequestParam(required = false, name = "editId", value = "editId") String editId, NewsForm newsForm, Model model) {
+        int id = Integer.parseInt(editId);
+        News originalNews = service.findNewsById(id);
         String name = newsForm.getName();
+        if (name == null) {
+            name = originalNews.getName();
+        }
         String content = newsForm.getContent();
+        if (content == null) {
+            content = originalNews.getContent();
+        }
+        LocalDateTime date = LocalDateTime.now();
+
         String category = newsForm.getCategory();
-        News news = new News(name, content, LocalDateTime.now(), category);
+        if (category == null) {
+            category = originalNews.getCategory();
+        }
+
+        News news = new News(name, content, date, category);
         model.addAttribute("news", news);
-        service.updateNews(news);
+        service.mergeNews(originalNews, news);
 
         return "list";
     }

@@ -1,11 +1,8 @@
 package com.github.owl4soul.models;
 
-import sun.security.x509.CertAttrSet;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -92,6 +89,10 @@ public class News {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override

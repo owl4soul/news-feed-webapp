@@ -16,14 +16,15 @@
 </head>
 <body>
 
-<form:form method="get" modelAttribute="newsForm" lang="en">
+<form:form method="post" modelAttribute="newsForm" lang="en">
 
     <tr bgcolor="#c8d8f8">
+
         <td valign=top>
             Name*
             <input type="text" name="name" value="${name}" size=15 maxlength=20></td>
-        <td valign=top>
 
+        <td valign=top>
             Content*
             <input type="text" name="content" value="${content}" size=15 maxlength=50></td>
 
@@ -35,7 +36,6 @@
             <option>${Category.SPORT.name()}</option>
             <option>${Category.POLITICS.name()}</option>
             <option>${Category.OTHER.name()}</option>
-
         </select>
 
     </tr>
