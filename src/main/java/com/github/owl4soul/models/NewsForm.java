@@ -3,6 +3,7 @@ package com.github.owl4soul.models;
 public class NewsForm {
     private String name;
     private String content;
+    private String category;
 
     public String getName() {
         return name;
@@ -18,5 +19,13 @@ public class NewsForm {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

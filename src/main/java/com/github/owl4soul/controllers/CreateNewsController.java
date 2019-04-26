@@ -28,8 +28,9 @@ public class CreateNewsController {
     public String saveNewNews(NewsForm newsForm, Model model) {
         String name = newsForm.getName();
         String content = newsForm.getContent();
-        System.out.println("n^ " + name + " and " + content); //todo: remove it later
-        News news = new News(name, content, LocalDateTime.now(), Category.SCIENCE);
+        String category = newsForm.getCategory();
+        System.out.println("n^ " + name + " and " + content + " and " + category); //todo: remove it later
+        News news = new News(name, content, LocalDateTime.now(), Category.IT);
         model.addAttribute("news", news);
         service.saveNews(news);
 

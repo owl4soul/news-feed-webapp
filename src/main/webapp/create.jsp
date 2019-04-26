@@ -1,3 +1,4 @@
+<%@ page import="com.github.owl4soul.models.Category" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
@@ -23,6 +24,18 @@ Create news
 
             Content*
             <input type="text" name="content" value="" size=15 maxlength=50></td>
+
+
+            *Category
+            <select name="category" size=10>
+                <option>${Category.IT.name()}</option>
+                <option>${Category.SCIENCE.name()}</option>
+                <option>${Category.SPORT.name()}</option>
+                <option>${Category.POLITICS.name()}</option>
+                <option>${Category.OTHER.name()}</option>
+
+            </select>
+
     </tr>
     <input type="submit" value="Create new news">
     </table>
