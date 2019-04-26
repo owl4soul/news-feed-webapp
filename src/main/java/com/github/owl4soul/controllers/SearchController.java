@@ -29,9 +29,9 @@ public class SearchController {
         if (button.equals("byName")) {
             result.addObject("filteredList", service.findAllByName(input));
         } else if (button.equals("byContent")) {
-            result.addObject("filteredNews", service.findAllByContent(input));
+            result.addObject("filteredList", service.findAllByContent(input));
         } else if (button.equals("byCategory")) {
-            result.addObject("filteredNews", service.findAllByCategory(input));
+            result.addObject("filteredList", service.findAllByCategory(input));
         }
 
         return result;
