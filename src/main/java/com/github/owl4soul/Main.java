@@ -10,28 +10,31 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-//        NewsService service = new NewsService();
+
+////        CONSOLE DEMO
 //
+//        NewsService service = new NewsService();
 //
 //        //Creating new news and save it to database
 //        News news = new News("TEST", "Test content", LocalDateTime.now(), Category.SCIENCE);
+//        News news1 = new News("New name", "New content", LocalDateTime.now(), Category.OTHER);
+//
 //        service.saveNews(news);
 //
-//        service.updateNews(news);
+//        service.mergeNews(news, new News("Changed", "This news was changed", LocalDateTime.now(), Category.IT));
 //
-//        service.mergeNews(news, new News("Changed", "This news was changed", LocalDateTime.now(), Category.POLITICS));
-//
+//        int id = news.getId();
 //
 //        //System output all news stored in the database at the moment
 //        List<News> newsList = service.findAllNews();
 //        for (News n:newsList) {
 //            System.out.println(n);
 //        }
-
+//
 //        //Delete chosen news from database
-//        News toDel = service.findNewsById(1);
+//        News toDel = service.findNewsById(id);
 //        service.deleteNews(toDel);
-
+//
 //        //System output all news corresponding to a given category
 //        System.out.println("________________________________________________________");
 //        System.out.println("System output all news corresponding to a given category");
@@ -42,15 +45,13 @@ public class Main {
 //        //System output all news named as argument
 //        System.out.println("________________________________________________________");
 //        System.out.println("System output all news named as argument");
-//        List<News> selectedByName = service.findAllByName("Name from main");
+//        List<News> selectedByName = service.findAllByName("Changed");
 //        IterateAndSout.iterateAndSoutNews(selectedByName);
 //
 //        //System output all news having a certain content
 //        System.out.println("________________________________________________________");
 //        System.out.println("System output all news having a certain content");
-//        List<News> selectedByContent = service.findAllByContent("Content from main");
+//        List<News> selectedByContent = service.findAllByContent("content");
 //        IterateAndSout.iterateAndSoutNews(selectedByContent);
-
-
     }
 }
