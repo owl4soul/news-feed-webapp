@@ -12,6 +12,7 @@ public class Main {
     public static void main(String[] args) {
 //        NewsService service = new NewsService();
 //
+//
 //        //Creating new news and save it to database
 //        News news = new News("TEST", "Test content", LocalDateTime.now(), Category.SCIENCE);
 //        service.saveNews(news);
