@@ -4,7 +4,6 @@ import com.github.owl4soul.models.News;
 import com.github.owl4soul.command.NewsForm;
 import com.github.owl4soul.services.NewsService;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,17 +23,14 @@ public class CreateNewsController {
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public ModelAndView saveNewNews(NewsForm newsForm, Model model) {
+    public ModelAndView saveNewNews(NewsForm newsForm) {
         String name = newsForm.getName();
         String content = newsForm.getContent();
         String category = newsForm.getCategory();
-        System.out.println("n^ " + name + " and " + content + " and " + category); //todo: remove it later
         News news = new News(name, content, LocalDateTime.now(), category);
         service.saveNews(news);
         ModelAndView modelAndView = new ModelAndView("success");
         modelAndView.addObject("news", news);
-
         return modelAndView;
     }
-
 }

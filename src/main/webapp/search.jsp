@@ -14,7 +14,8 @@
     <title>Search page</title>
 </head>
 <body>
-Here is search
+Here is search<br>
+<br>
 
 
 <form:form method="post" lang="en">
@@ -24,8 +25,10 @@ Here is search
             Enter query*
             <input type="text" name="input" value="" size=50 maxlength=9999><br>
 
+            <button type="submit" name="button" value="byName">Search by name</button>
+            <button type="submit" name="button" value="byContent">Search by content</button>
 
-
+            <br>
             *Category
             <select name="category" size=5>
                 <c:forEach items="${Category.values()}" var="category">
@@ -33,8 +36,8 @@ Here is search
                 </c:forEach>
             </select>
 
-            <button type="submit" name="button" value="byName">Search by name</button>
-            <button type="submit" name="button" value="byContent">Search by content</button>
+
+            <br>
             <button type="submit" name="button" value="byCategory">Search by category</button>
 
         </form></td>

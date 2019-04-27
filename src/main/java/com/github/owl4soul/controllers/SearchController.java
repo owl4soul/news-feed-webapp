@@ -25,12 +25,15 @@ public class SearchController {
         ModelAndView result = new ModelAndView("/result");
         if (button.equals("byName")) {
             result.addObject("filteredList", service.findAllByName(input));
+            result.addObject("input", input);
         } else if (button.equals("byContent")) {
             result.addObject("filteredList", service.findAllByContent(input));
+            result.addObject("input", input);
         } else if (button.equals("byCategory")) {
             result.addObject("filteredList", service.findAllByCategory(category));
+            result.addObject("category", category);
         }
+        result.addObject("button", button);
         return result;
     }
-
 }

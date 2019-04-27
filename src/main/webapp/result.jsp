@@ -12,7 +12,10 @@
     <title>Result of searching</title>
 </head>
 <body>
-Results here:
+Results of searching "${button}" <br>
+with your query:  "${input} ${category}" <br>
+are here: <br>
+<br>
 
 <table>
 

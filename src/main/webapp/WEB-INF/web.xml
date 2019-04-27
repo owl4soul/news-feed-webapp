@@ -25,10 +25,4 @@
         <listener-class>org.springframework.web.context.ContextLoader</listener-class>
     </listener>
 
-
-
-
-
-
-
 </web-app>

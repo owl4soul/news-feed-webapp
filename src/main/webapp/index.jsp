@@ -11,11 +11,16 @@
     <title>Index</title>
 </head>
 <body>
-Hello-hello<br>
-To view the news feed, click on the button:
-<input type="button" value="Show feed" onClick='location.href="/list"'><br>
+News feed<br>
 
-To create a new news, click on the button:
+<br>
+To create a new news, click on the button:<br>
 <input type="button" value="Create news" onClick='location.href="/create"'><br>
+<br>
+To view the news feed, click on the button:<br>
+<input type="button" value="Show feed" onClick='location.href="/list"'><br>
+<br>
+To search through the news feed, click on the button:<br>
+<input type="button" value="Search news" onClick='location.href="/search"'><br>
 </body>
 </html>

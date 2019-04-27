@@ -1,4 +1,3 @@
-
 <%@ page import="com.github.owl4soul.models.Category" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -15,18 +14,19 @@
     <title>Edit news</title>
 </head>
 <body>
-
+You can edit selected news here:
+<br>
 <form:form method="post" modelAttribute="newsForm" lang="en">
 
     <tr bgcolor="#c8d8f8">
 
         <td valign=top>
             Name*
-            <input type="text" name="name" value="${name}" size=15 maxlength=255></td>
+            <input type="text" name="name" value="${name}" size=25 maxlength=255></td>
 
         <td valign=top>
             Content*
-            <input type="text" name="content" value="${content}" size=15></td>
+            <input type="text" name="content" value="${content}" size=50></td>
 
 
         *Category

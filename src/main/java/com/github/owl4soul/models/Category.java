@@ -9,8 +9,7 @@ public enum Category {
     SCIENCE,
     SPORT,
     POLITICS,
-    OTHER,
-    ;
+    OTHER;
 
     Category() {
     }
@@ -26,8 +25,5 @@ public enum Category {
             categoriesNames.add(cat.name());
         }
         return categoriesNames;
-
     }
-
-
 }

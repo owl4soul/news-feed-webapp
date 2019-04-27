@@ -74,11 +74,12 @@ public class NewsDAO {
         List<News> listNews = HibernateSessionFactoryUtil
                 .getSessionFactory()
                 .openSession()
-                .createQuery( "from News n where n.category = :category", News.class)
+                .createQuery("from News n where n.category = :category", News.class)
                 .setParameter("category", categoryStr)
                 .list();
         return listNews;
     }
+
     public List<News> findAllByCategory(Category category) {
         String categoryStr = category.name();
         List<News> listNews = findAllByCategory(categoryStr);

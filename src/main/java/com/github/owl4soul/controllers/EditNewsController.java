@@ -15,8 +15,7 @@ public class EditNewsController {
     private NewsService service = new NewsService();
 
     @RequestMapping(value = "/edit", method = RequestMethod.GET)
-    public ModelAndView showEditForm(@RequestParam(required = false, name = "editId", value = "editId") String editId, Model map) {
-        map.addAttribute("editId", editId);
+    public ModelAndView showEditForm(@RequestParam(required = false, name = "editId", value = "editId") String editId) {
         System.out.println(editId);
         int id = Integer.parseInt(editId);
         News news = service.findNewsById(id);
@@ -30,12 +29,11 @@ public class EditNewsController {
         result.addObject("name", name);
         result.addObject("content", content);
         result.addObject("category", category);
-
         return result;
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
-    public ModelAndView editNews(@RequestParam(required = false, name = "editId", value = "editId") String editId, NewsForm newsForm, Model model) {
+    public ModelAndView editNews(@RequestParam(required = false, name = "editId", value = "editId") String editId, NewsForm newsForm) {
         int id = Integer.parseInt(editId);
         News originalNews = service.findNewsById(id);
         String name = newsForm.getName();
@@ -47,18 +45,14 @@ public class EditNewsController {
             content = originalNews.getContent();
         }
         LocalDateTime date = LocalDateTime.now();
-
         String category = newsForm.getCategory();
         if (category == null) {
             category = originalNews.getCategory();
         }
 
         News news = new News(name, content, date, category);
-
         service.mergeNews(originalNews, news);
-
         ModelAndView modelAndView = new ModelAndView("success");
-
         return modelAndView;
     }
 }

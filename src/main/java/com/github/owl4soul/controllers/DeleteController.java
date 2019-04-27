@@ -17,8 +17,5 @@ public class DeleteController {
         service.deleteNews(service.findNewsById(id));
         ModelAndView result = new ModelAndView("success");
         return result;
-
     }
-
-
 }

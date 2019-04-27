@@ -7,7 +7,6 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "news")
-//@NamedQueries({ @NamedQuery(name = "findAllByCategory", query = "from News news where news.category= :name") })
 public class News {
 
     @Id

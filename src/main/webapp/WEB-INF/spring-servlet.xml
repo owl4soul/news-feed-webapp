@@ -10,7 +10,4 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <!--<bean id="dao" class="com.github.owl4soul.models.News">-->
-
-    <!--</bean>-->
 </beans>

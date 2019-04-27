@@ -14,7 +14,8 @@
     <title>NEWS</title>
 </head>
 <body>
-Here is the list of all the news.
+Here is the list of all the news.<br>
+<br>
 
 <table>
 <c:forEach items="${listNews}" var="news">
