@@ -23,7 +23,7 @@ Tomcat 9 может быть использован для запуска при
 ***
  ***Структура проекта:***
  
-**com.github.owl4soul**
+**/com.github.owl4soul**
 * Main - класс, содержащий main-метод
 
 **/command:**
