@@ -18,30 +18,30 @@ Results here:
 
     <c:forEach items="${filteredList}" var="news">
         <tr>
-            <td>${news[0]}</td>
+            <td>${news.id}</td>
         </tr>
         <tr>
-            <td>${news[1]}</td>
+            <td>${news.name}</td>
         </tr>
         <tr>
-            <td>${news[2]}</td>
+            <td>${news.content}</td>
         </tr>
         <tr>
-            <td>${news[3]}</td>
+            <td>${news.date}</td>
         </tr>
         <tr>
-            <td>${news[4]}</td>
+            <td>${news.category}</td>
         </tr>
         <tr>
             <td>
                 <form action="/edit" method="get">
-                    <input type="hidden" name="editId" value="${news[0]}">
+                    <input type="hidden" name="editId" value="${news.id}">
                     <button type="submit" name="button" value="editButton">Edit news</button>
                 </form>
             </td>
 
             <td><form action="/delete" method="get">
-                <input type="hidden" name="editId" value="${news[0]}">
+                <input type="hidden" name="editId" value="${news.id}">
                 <button type="submit" name="button" value="deleteButton">Delete news</button>
             </form></td>
         </tr>

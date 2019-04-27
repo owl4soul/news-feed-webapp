@@ -63,26 +63,38 @@ public class NewsDAO {
         return listNews;
     }
 
-    public List<News> findAllByCategory(String category) {
-        String hql = "select * from userdatabase.public.news where public.news.category_news='" + category + "'";
-        List<News> listNews = (List<News>)HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery(hql).list();
+    public List<News> findAllByCategory(String categoryStr) {
+        List<News> listNews = HibernateSessionFactoryUtil
+                .getSessionFactory()
+                .openSession()
+                .createQuery( "from News n where n.category = :category", News.class)
+                .setParameter("category", categoryStr)
+                .list();
         return listNews;
     }
     public List<News> findAllByCategory(Category category) {
-        String hql = "select * from userdatabase.public.news where public.news.category_news='" + category + "'";
-        List<News> listNews = (List<News>)HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery(hql).list();
+        String categoryStr = category.name();
+        List<News> listNews = findAllByCategory(categoryStr);
         return listNews;
     }
 
     public List<News> findAllByName(String name) {
-        String hql = "select * from userdatabase.public.news where public.news.name_news='" + name + "'";
-        List<News> listNews = (List<News>)HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery(hql).list();
+//        String sql = "select * from userdatabase.public.news where public.news.name_news='" + name + "'";
+        List<News> listNews = HibernateSessionFactoryUtil
+                .getSessionFactory()
+                .openSession()
+                .createQuery("from News n where n.name = :name", News.class)
+                .list();
         return listNews;
     }
 
     public List<News> findAllByContent(String content) {
-        String hql = "select * from userdatabase.public.news where public.news.content_news='" + content + "'";
-        List<News> listNews = (List<News>)HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery(hql).list();
+//        String sql = "select * from userdatabase.public.news where public.news.content_news='" + content + "'";
+        List<News> listNews = HibernateSessionFactoryUtil
+                .getSessionFactory()
+                .openSession()
+                .createQuery("from News n  where n.content = :content", News.class)
+                .list();
         return listNews;
     }
 

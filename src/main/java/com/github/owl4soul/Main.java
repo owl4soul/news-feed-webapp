@@ -31,11 +31,11 @@ public class Main {
 //        News toDel = service.findNewsById(1);
 //        service.deleteNews(toDel);
 
-//        //System output all news corresponding to a given category
-//        System.out.println("________________________________________________________");
-//        System.out.println("System output all news corresponding to a given category");
-//        List<News> selectedByCategory = service.findAllByCategory(Category.SCIENCE.name());
-//        IterateAndSout.iterateAndSoutNews(selectedByCategory);
+        //System output all news corresponding to a given category
+        System.out.println("________________________________________________________");
+        System.out.println("System output all news corresponding to a given category");
+        List<News> selectedByCategory = service.findAllByCategory(Category.SCIENCE);
+        IterateAndSout.iterateAndSoutNews(selectedByCategory);
 //
 //
 //        //System output all news named as argument

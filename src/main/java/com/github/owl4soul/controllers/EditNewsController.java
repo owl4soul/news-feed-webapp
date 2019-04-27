@@ -1,7 +1,7 @@
 package com.github.owl4soul.controllers;
 
 import com.github.owl4soul.models.News;
-import com.github.owl4soul.models.NewsForm;
+import com.github.owl4soul.command.NewsForm;
 import com.github.owl4soul.services.NewsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

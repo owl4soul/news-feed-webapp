@@ -1,7 +1,7 @@
 package com.github.owl4soul.controllers;
 
 import com.github.owl4soul.models.News;
-import com.github.owl4soul.models.NewsForm;
+import com.github.owl4soul.command.NewsForm;
 import com.github.owl4soul.services.NewsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,7 +30,6 @@ public class CreateNewsController {
         String category = newsForm.getCategory();
         System.out.println("n^ " + name + " and " + content + " and " + category); //todo: remove it later
         News news = new News(name, content, LocalDateTime.now(), category);
-//        model.addAttribute("news", news);
         service.saveNews(news);
         ModelAndView modelAndView = new ModelAndView("success");
         modelAndView.addObject("news", news);

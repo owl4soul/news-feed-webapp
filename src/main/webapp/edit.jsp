@@ -1,6 +1,7 @@
 
 <%@ page import="com.github.owl4soul.models.Category" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: owl
@@ -21,20 +22,18 @@
 
         <td valign=top>
             Name*
-            <input type="text" name="name" value="${name}" size=15 maxlength=20></td>
+            <input type="text" name="name" value="${name}" size=15 maxlength=255></td>
 
         <td valign=top>
             Content*
-            <input type="text" name="content" value="${content}" size=15 maxlength=50></td>
+            <input type="text" name="content" value="${content}" size=15></td>
 
 
         *Category
-        <select name="category" size=10>
-            <option>${Category.IT.name()}</option>
-            <option>${Category.SCIENCE.name()}</option>
-            <option>${Category.SPORT.name()}</option>
-            <option>${Category.POLITICS.name()}</option>
-            <option>${Category.OTHER.name()}</option>
+        <select name="category" size=5>
+            <c:forEach items="${Category.values()}" var="category">
+                <option value="${category}">${category}</option>
+            </c:forEach>
         </select>
 
     </tr>

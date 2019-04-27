@@ -1,4 +1,4 @@
-package com.github.owl4soul.models;
+package com.github.owl4soul.command;
 
 public class NewsForm {
     private String name;

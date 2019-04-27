@@ -19,11 +19,11 @@ Create news
     <tr bgcolor="#c8d8f8">
         <td valign=top>
             Name*
-            <input type="text" name="name" value="" size=15 maxlength=20></td>
+            <input type="text" name="name" value="" size=15 maxlength=255></td>
         <td valign=top>
 
             Content*
-            <input type="text" name="content" value="" size=15 maxlength=50></td>
+            <input type="text" name="content" value="" size=15></td>
 
 
             *Category
