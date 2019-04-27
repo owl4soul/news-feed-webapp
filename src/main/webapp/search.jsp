@@ -1,4 +1,6 @@
+<%@ page import="com.github.owl4soul.models.Category" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: owl
@@ -23,14 +25,13 @@ Here is search
             <input type="text" name="input" value="" size=50 maxlength=9999><br>
 
 
+
             *Category
             <select name="category" size=5>
-                <option>${Category.IT.name()}</option>
-                <option>${Category.SCIENCE.name()}</option>
-                <option>${Category.SPORT.name()}</option>
-                <option>${Category.POLITICS.name()}</option>
-                <option>${Category.OTHER.name()}</option>
-            </select><br>
+                <c:forEach items="${Category.values()}" var="category">
+                    <option value="${category}">${category}</option>
+                </c:forEach>
+            </select>
 
             <button type="submit" name="button" value="byName">Search by name</button>
             <button type="submit" name="button" value="byContent">Search by content</button>

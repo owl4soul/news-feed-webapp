@@ -1,6 +1,5 @@
-<%@ page import="com.github.owl4soul.models.News" %>
-<%@ page import="com.github.owl4soul.controllers.EditNewsController" %>
-<%@ page import="com.github.owl4soul.services.NewsService" %>
+
+<%@ page import="com.github.owl4soul.models.Category" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.

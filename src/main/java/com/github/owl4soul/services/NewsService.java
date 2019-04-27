@@ -1,5 +1,6 @@
 package com.github.owl4soul.services;
 
+import com.github.owl4soul.models.Category;
 import com.github.owl4soul.models.News;
 import com.github.owl4soul.repository.NewsDAO;
 
@@ -42,6 +43,10 @@ public class NewsService {
     }
 
     public List<News> findAllByCategory(String category) {
+        return newsDAO.findAllByCategory(category);
+    }
+
+    public List<News> findAllByCategory(Category category) {
         return newsDAO.findAllByCategory(category);
     }
 
