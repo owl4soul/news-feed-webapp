@@ -55,11 +55,18 @@ public class NewsDAO {
     }
 
     public News findNewsById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(News.class, id);
+        return HibernateSessionFactoryUtil
+                .getSessionFactory()
+                .openSession()
+                .get(News.class, id);
     }
 
     public List<News> findAll() {
-        List<News> listNews = (List<News>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From News").list();
+        List<News> listNews = HibernateSessionFactoryUtil
+                .getSessionFactory()
+                .openSession()
+                .createQuery("from News", News.class)
+                .list();
         return listNews;
     }
 
@@ -78,22 +85,22 @@ public class NewsDAO {
         return listNews;
     }
 
-    public List<News> findAllByName(String name) {
-//        String sql = "select * from userdatabase.public.news where public.news.name_news='" + name + "'";
+    public List<News> findAllByName(String likeName) {
         List<News> listNews = HibernateSessionFactoryUtil
                 .getSessionFactory()
                 .openSession()
-                .createQuery("from News n where n.name = :name", News.class)
+                .createQuery("from News n where n.name like concat('%', :name, '%') ", News.class)
+                .setParameter("name", likeName)
                 .list();
         return listNews;
     }
 
-    public List<News> findAllByContent(String content) {
-//        String sql = "select * from userdatabase.public.news where public.news.content_news='" + content + "'";
+    public List<News> findAllByContent(String likeContent) {
         List<News> listNews = HibernateSessionFactoryUtil
                 .getSessionFactory()
                 .openSession()
-                .createQuery("from News n  where n.content = :content", News.class)
+                .createQuery("from News n where n.content like concat('%', :content, '%') ", News.class)
+                .setParameter("content", likeContent)
                 .list();
         return listNews;
     }
