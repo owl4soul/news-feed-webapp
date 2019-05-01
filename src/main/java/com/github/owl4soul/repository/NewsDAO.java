@@ -23,15 +23,15 @@ public class NewsDAO {
 
     public void update(News news) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Transaction tx1 = session.beginTransaction();
+        Transaction transaction = session.beginTransaction();
         session.update(news);
-        tx1.commit();
+        transaction.commit();
         session.close();
     }
 
     public void merge(News news, News changed) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Transaction tx1 = session.beginTransaction();
+        Transaction transaction = session.beginTransaction();
         String nameChanged = changed.getName();
         String contentChanged = changed.getContent();
         LocalDateTime dateChanged = changed.getDate();
@@ -42,15 +42,15 @@ public class NewsDAO {
         news.setDate(dateChanged);
         news.setCategory(categoryChanged);
         session.merge(news);
-        tx1.commit();
+        transaction.commit();
         session.close();
     }
 
     public void delete(News news) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Transaction tx1 = session.beginTransaction();
+        Transaction transaction = session.beginTransaction();
         session.delete(news);
-        tx1.commit();
+        transaction.commit();
         session.close();
     }
 
